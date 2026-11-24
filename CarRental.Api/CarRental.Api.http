@@ -1,0 +1,27 @@
+@host = http://localhost:5103
+
+### Listar automóviles
+GET {{host}}/api/cars
+Accept: application/json
+
+### Registrar alquiler con precio
+POST {{host}}/api/rentals
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "carId": 1,
+    "startDate": "2026-12-10",
+    "endDate": "2026-12-14"
+}
+
+### Intentar alquilar automóvil ocupado
+POST {{host}}/api/rentals
+Content-Type: application/json
+
+{
+    "userId": 2,
+    "carId": 1,
+    "startDate": "2026-12-11",
+    "endDate": "2026-12-13"
+}
